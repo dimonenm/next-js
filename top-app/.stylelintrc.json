@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-clean-order"
+  ],
+  "plagins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "indentation": [
+      2
+    ],
+    "color-hex-case": "upper"
+  }
+}
