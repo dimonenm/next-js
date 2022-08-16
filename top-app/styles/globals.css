@@ -1,9 +1,9 @@
 :root {
   --black: #3B434E;
-  --gray-light: #ebebeb;
+  --gray-light: #EBEBEB;
   --white: white;
   --primary: #7653FC;
-  --primary-hover: #6344df;
+  --primary-hover: #6344DF;
   --red: #FC836D;
   --green: #1DC37E;
   --green-light: #C8F8E4;
@@ -29,7 +29,7 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
@@ -39,4 +39,4 @@ a {
 
     background: black;
   }
-}
+} */
