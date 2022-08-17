@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { Button, Htag, P, Tag } from '../components'
+import { Button, Htag, P, Rating, Tag } from '../components'
 
-export default function Home() {
+export default function Home(): JSX.Element {
   const [counter, setCounter] = useState<number>(0)
+  const [rating, setRating] = useState<number>(4)
 
   useEffect(() => {
     console.log('Counter ' + counter);
@@ -26,6 +27,7 @@ export default function Home() {
       <Tag size='s' color='grey'>gray</Tag>
       <Tag size='s' color='red'>red</Tag>
       <Tag size='s' color='primary' href='3'>primary</Tag>
+      <Rating rating={rating} isEditable setRating={setRating} />
     </>
   )
 }
