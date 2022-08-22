@@ -7,7 +7,7 @@ import { Button, Htag, P, Rating, Tag } from '../components'
 import { MenuItem } from '../interfaces/menu.interface'
 import { withLayout } from '../layout/Layout'
 
-function Home({ menu, firstCategory}:MenuProps): JSX.Element {
+function Home({ menu }: MenuProps): JSX.Element {
   const [counter, setCounter] = useState<number>(0)
   const [rating, setRating] = useState<number>(4)
 
