@@ -1,5 +1,4 @@
 import React from 'react'
-// import { Head } from 'next/document'
 import Head from "next/head"
 import { AppProps } from 'next/dist/shared/lib/router/router'
 import '../styles/globals.css'
