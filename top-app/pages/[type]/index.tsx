@@ -16,8 +16,7 @@ function Type({ firstCategory }: TypeProps): JSX.Element {
 }
 export default withLayout(Type)
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  
+export const getStaticPaths: GetStaticPaths = async () => {  
   return {
     paths: firstLevelMenu.map(m => '/' + m.route),
     fallback: true
