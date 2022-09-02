@@ -17,7 +17,6 @@
     ]
   },
   "extends": [
-    // "next/core-web-vitals",
     "eslint:recommented",
     "plugin:@typescript-eslint/eslint-recommented",
     "plugin:@typescript-eslint/recommented",
