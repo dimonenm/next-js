@@ -6,10 +6,6 @@
   justify-items: left;
 }
 
-.wrapper {
-  margin-top: 40px;
-}
-
 .hhTitle {
   display: grid;
   grid-template-columns: auto 1fr;
