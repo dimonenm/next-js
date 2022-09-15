@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { Button, Htag, P, Rating, Tag } from '../components'
+import { Button, Htag, Input, P, Rating, Tag } from '../components'
 import { MenuItem } from '../interfaces/menu.interface'
 import { withLayout } from '../layout/Layout'
 
@@ -32,6 +32,7 @@ function Home({ menu }: MenuProps): JSX.Element {
       <Tag size='s' color='red'>red</Tag>
       <Tag size='s' color='primary' href='3'>primary</Tag>
       <Rating rating={rating} isEditable setRating={setRating} />
+      <Input />
       <ul>
         {menu.map(m => (<li key={m._id.secondCategory}>{m._id.secondCategory}</li>))}
       </ul>
