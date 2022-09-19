@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { useState, useEffect, KeyboardEvent, forwardRef, ForwardedRef } from 'react';
 import StarIcon from './star.svg'
 
-export const Rating = forwardRef(({ isEditable = false, rating, setRating, ...props }: RatingProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
+export const Rating = forwardRef(({ isEditable = false, rating, setRating, error, ...props }: RatingProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
   const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>))
 
   useEffect(() => {
@@ -51,8 +51,11 @@ export const Rating = forwardRef(({ isEditable = false, rating, setRating, ...pr
   }
 
   return (
-    <div {...props} ref={ref}>
+    <div className={cn(styles.ratingWrapper, {
+      [styles.error]: error
+    })} {...props} ref={ref}>
       {ratingArray.map((r, i) => (<span key={i}>{r}</span>))}
+      {error && <span className={styles.errorMessage}>{error.message}</span>}
     </div>
   )
 })
