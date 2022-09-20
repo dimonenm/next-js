@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { Button, Htag, Input, P, Rating, Tag } from '../components'
+import { API } from '../helpers/api'
 import { MenuItem } from '../interfaces/menu.interface'
 import { withLayout } from '../layout/Layout'
 
@@ -44,7 +45,7 @@ export default withLayout(Home)
 
 export const getStaticProps: GetStaticProps<MenuProps> = async () => {
   const firstCategory = 0;
-  const { data: menu } = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
+  const { data: menu } = await axios.post<MenuItem[]>(API.topPage.find, {
     firstCategory
   })
   return {
