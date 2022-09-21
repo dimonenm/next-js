@@ -139,15 +139,8 @@
   border-bottom: 1px dashed var(--gray-light);
   margin-bottom: 5px;
 }
-
-.closed{
+.reviews {
   overflow: hidden;
-  max-height: 0;
-  padding: 0;
-}
-
-.opened{
-  max-height: auto;
   padding: 30px;
 }
 
@@ -170,21 +163,53 @@
       "hr2 hr2 hr2 hr2 hr2 hr2 hr2"
       "actions actions actions actions actions actions actions";
   }
-  .logo {grid-area: logo; margin-bottom: 20px;}
-  .title {grid-area: title;}
-  .tags {grid-area: tags;}
-  .price {grid-area: price;}
-  .credit {grid-area: credit;}
-  .raiting {grid-area: raiting;}
-  .priceTitle {grid-area: priceTitle;}
-  .creditTitle {grid-area: creditTitle;}
-  .rateTitle {grid-area: rateTitle;}
-  .hr {grid-area: hr;}
-  .description {grid-area: description;}
-  .feature {grid-area: feature; margin-bottom: 20px;}
-  .advBlock {grid-area: advBlock;}
-  .hr2 {grid-area: hr2;}
-  .actions {grid-area: actions;}
+  .logo {
+    grid-area: logo;
+    margin-bottom: 20px;
+  }
+  .title {
+    grid-area: title;
+  }
+  .tags {
+    grid-area: tags;
+  }
+  .price {
+    grid-area: price;
+  }
+  .credit {
+    grid-area: credit;
+  }
+  .raiting {
+    grid-area: raiting;
+  }
+  .priceTitle {
+    grid-area: priceTitle;
+  }
+  .creditTitle {
+    grid-area: creditTitle;
+  }
+  .rateTitle {
+    grid-area: rateTitle;
+  }
+  .hr {
+    grid-area: hr;
+  }
+  .description {
+    grid-area: description;
+  }
+  .feature {
+    grid-area: feature;
+    margin-bottom: 20px;
+  }
+  .advBlock {
+    grid-area: advBlock;
+  }
+  .hr2 {
+    grid-area: hr2;
+  }
+  .actions {
+    grid-area: actions;
+  }
 }
 
 @media screen and (max-width: 640px) {
@@ -203,7 +228,11 @@
       "hr2 hr2 hr2"
       "actions actions actions";
   }
-    .price, .credit, .raiting {margin-bottom: 10px;}
+  .price,
+  .credit,
+  .raiting {
+    margin-bottom: 10px;
+  }
 }
 
 @media screen and (max-width: 480px) {
