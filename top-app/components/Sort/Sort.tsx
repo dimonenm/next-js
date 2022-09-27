@@ -6,16 +6,27 @@ import cn from 'classnames';
 export const Sort = ({ sort, setSort, className, ...props }: SortProps): JSX.Element => {
   return (
     <div className={cn(styles.sort, className)} {...props}>
-      <button className={cn({
-        [styles.active]: sort === SortEnum.Raiting 
+      <div className={styles.sortName} id="sort">Сортировка</div>
+      <button
+        id="rating"
+        className={cn({
+          [styles.active]: sort === SortEnum.Raiting 
       })}
         onClick={() => setSort(SortEnum.Raiting)}
-      >
+        aria-selected={sort === SortEnum.Raiting}
+        aria-labelledby="sort rating"
+        >
         <SortIcon className={ styles.sortIcon} />По рейтингу
       </button>
-      <button className={cn({
-        [styles.active]: sort === SortEnum.Price 
-      })} onClick={()=> setSort(SortEnum.Price)} >
+      <button
+        id="price"
+        className={cn({
+          [styles.active]: sort === SortEnum.Price 
+        })}
+        onClick={() => setSort(SortEnum.Price)}
+        aria-selected={sort === SortEnum.Price}
+        aria-labelledby="sort price"
+        >
         <SortIcon className={styles.sortIcon} />По цене
       </button>
     </div>
