@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
-import {useState } from 'react'
+import { useState } from 'react'
 import { withLayout } from '../../layout/Layout'
 import axios from 'axios'
 import { MenuItem } from '../../interfaces/menu.interface'
@@ -9,13 +9,23 @@ import { ProductModel } from '../../interfaces/product.interface'
 import { firstLevelMenu } from '../../helpers/helpers'
 import { TopPageComponent } from '../../page-components'
 import { API } from '../../helpers/api'
+import Head from 'next/head'
 
-function TopPage({ firstCategory, page, products }: TopPageProps): JSX.Element {  
-  return <TopPageComponent
-    firstCategory={firstCategory}
-    page={page}
-    products={products}
-  />
+function TopPage({ firstCategory, page, products }: TopPageProps): JSX.Element {
+  return <>
+    <Head>
+      <title>{page.metaTitle}</title>
+      <meta name="description" content={ page.metaDescription} />
+      <meta property="og:title" content={page.metaTitle} />
+      <meta property="og:description" content={page.metaDescription} />
+      <meta property="og:type" content="article" />
+    </Head>
+    <TopPageComponent
+      firstCategory={firstCategory}
+      page={page}
+      products={products}
+    />
+  </>
 }
 
 export default withLayout(TopPage)
@@ -35,16 +45,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps<TopPageProps> = async ({ params }: GetStaticPropsContext<ParsedUrlQuery>) => {
-  if(!params) return {notFound: true}
-  
+  if (!params) return { notFound: true }
+
   const firstCategoryItem = firstLevelMenu.find(m => m.route === params.type)
   if (!firstCategoryItem) return { notFound: true }
-  
+
   const { data: menu } = await axios.post<MenuItem[]>(API.topPage.find, {
     firstCategory: firstCategoryItem.id
   })
 
-  
+
   const { data: page } = await axios.get<TopPageModel>(API.topPage.byAlias + params.alias)
   const { data: products } = await axios.post<ProductModel[]>(API.product.find, {
     category: page.category,
