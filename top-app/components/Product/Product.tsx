@@ -96,6 +96,7 @@ height:'auto'
             arrow={isReViewOpened ? 'down' : 'right'}
             className={styles.reviewButton}
             onClick={() => setIsReViewOpened(!isReViewOpened)}
+            aria-expanded={isReViewOpened}
           >Читать отзыва</Button>
         </div>
       </Card>
