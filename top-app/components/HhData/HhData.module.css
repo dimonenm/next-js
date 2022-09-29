@@ -6,45 +6,49 @@
 
 .count {
   padding: 20px;
+
   text-align: center;
 }
 
 .salary {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 20px;
-  text-align: center;
   gap: 20px 0;
+
+  padding: 20px;
+
+  text-align: center;
 }
 
 .salary > div {
   border-right: 1px solid var(--gray-light);
 }
+
 .salary > div:last-child {
   border-right: none;
 }
 
 .title {
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 27px;
-
   margin-bottom: 10px;
+
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 27px;
 }
 
 .cauntValue {
-  font-weight: bold;
   font-size: 36px;
+  font-weight: bold;
   line-height: 49px;
   color: var(--primary);
 }
 
 .salaryValue {
-  font-weight: bold;
-  font-size: 26px;
-  line-height: 35px;
-
   margin-bottom: 10px;
+
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 35px;
 }
 
 .rate {
@@ -63,18 +67,22 @@
     grid-template-columns: 1fr;
   }
 }
+
 @media screen and (max-width: 640px) {
   .salary {
     grid-template-columns: 1fr;
   }
 
   .salary > div {
+    padding-bottom: 20px;
+
     border-right: none;
     border-bottom: 1px solid var(--gray-light);
-    padding-bottom: 20px;
   }
+
   .salary > div:last-child {
     padding-bottom: 0;
+
     border-bottom: none;
-}
+  }
 }

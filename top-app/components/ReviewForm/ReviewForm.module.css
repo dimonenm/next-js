@@ -28,9 +28,11 @@
 }
 
 .panel {
+  position: relative;
+
   margin-top: 20px;
   padding: 20px;
-  position: relative;
+
   border-radius: 5px;
 }
 
@@ -63,9 +65,11 @@
   .reviewForm {
     grid-template-columns: [start] 1fr 1fr [end];
   }
+
   .title {
     justify-self: normal;
   }
+
   .rating {
     grid-column: start / end;
   }
