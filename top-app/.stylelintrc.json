@@ -6,12 +6,15 @@
   "plagins": [
     "stylelint-order"
   ],
+  "ignoreFiles": [
+    "./out/**/*.css"
+  ],
   "rules": {
     "indentation": [
       2
-    ],
+    ],    
     "color-hex-case": "upper",
     "selector-class-pattern": null,
     "max-line-length": 200
-  }
+  }  
 }
