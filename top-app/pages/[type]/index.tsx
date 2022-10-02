@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
-import { ParsedUrlQuery } from 'node:querystring';
+import { ParsedUrlQuery } from 'querystring';
 import { API } from '../../helpers/api';
 import { firstLevelMenu } from '../../helpers/helpers';
 import { MenuItem } from '../../interfaces/menu.interface';
